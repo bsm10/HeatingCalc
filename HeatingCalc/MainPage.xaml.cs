@@ -59,17 +59,24 @@ namespace HeatingCalc
             G = ParseStr(txtG.Text); 
             t1 = ParseStr(txtT1.Text); 
             t2 = ParseStr(txtT2.Text);
-            if (flag)
+            try
             {
-                G = 0.86 * Q / (t1 - t2);
-                txtG.Text = Math.Round(G,2).ToString();
+                if (flag)
+                {
+                    
+                    G = 0.86 * Q / (t1 - t2);
+                    txtG.Text = Math.Round(G, 2).ToString();
+                }
+                else
+                {
+                    Q = G * (t1 - t2) / 0.86;
+                    txtQ.Text = Q.ToString();
+                }
             }
-            else
+            catch
             {
-                Q = G * (t1 - t2) / 0.86;
-                txtQ.Text = Q.ToString();
+                return;
             }
-
 
         }
 
