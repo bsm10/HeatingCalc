@@ -22,9 +22,69 @@ namespace HeatingCalc
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        double Q, G, t1, t2;
+        bool flag;
+
+        private void txtQ_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            flag = true;
+            ReCalc();
+        }
+
+        private void txtG_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            flag = false;
+            ReCalc();
+        }
+
+        private void txtT1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ReCalc();
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
+            txtT1.Text = "20";
+            txtT2.Text = "-23";
+        }
+
+        private void txtT2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ReCalc();
+        }
+        private void ReCalc()
+        {
+            Q = ParseStr(txtQ.Text);
+            G = ParseStr(txtG.Text); 
+            t1 = ParseStr(txtT1.Text); 
+            t2 = ParseStr(txtT2.Text);
+            if (flag)
+            {
+                G = 0.86 * Q / (t1 - t2);
+                txtG.Text = Math.Round(G,2).ToString();
+            }
+            else
+            {
+                Q = G * (t1 - t2) / 0.86;
+                txtQ.Text = Q.ToString();
+            }
+
+
+        }
+
+        private double ParseStr(string Txt)
+        {
+            try
+            {
+                return double.Parse(Txt);
+            }
+            catch
+            {
+                return 0;
+            }
+            
+
         }
     }
 }

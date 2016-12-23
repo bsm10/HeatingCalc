@@ -8,6 +8,13 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+                <TextBlock x:Name="tblT1" HorizontalAlignment="Left" Height="30" Margin="20,20,0,0" TextWrapping="Wrap" Text="Т1" Width="20" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtT1" HorizontalAlignment="Left" Height="40" Margin="20,50,0,0" TextWrapping="Wrap" Text="" Width="144" VerticalAlignment="Top" TextChanged="txtT1_TextChanged"/>
+                <TextBlock x:Name="tblT2" HorizontalAlignment="Left" Height="30" Margin="180,20,0,0" TextWrapping="Wrap" Text="Т2" Width="101" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtT2" HorizontalAlignment="Left" Height="40" Margin="180,50,0,0" TextWrapping="Wrap" Text="" Width="144" VerticalAlignment="Top" TextChanged="txtT2_TextChanged"/>
+                <TextBlock x:Name="tblQ" HorizontalAlignment="Left" Height="30" Margin="20,100,0,0" TextWrapping="Wrap" Text="Q, кВт" Width="101" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtQ" HorizontalAlignment="Left" Height="40" Margin="20,130,0,0" TextWrapping="Wrap" Text="" Width="144" VerticalAlignment="Top" TextChanged="txtQ_TextChanged"/>
+                <TextBlock x:Name="tblG" HorizontalAlignment="Left" Height="30" Margin="180,100,0,0" TextWrapping="Wrap" Text="G, м3/ч" Width="101" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtG" HorizontalAlignment="Left" Height="40" Margin="180,130,0,0" TextWrapping="Wrap" Text="" Width="144" VerticalAlignment="Top" TextChanged="txtG_TextChanged"/>
     </Grid>
 </Page>
